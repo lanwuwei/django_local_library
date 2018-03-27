@@ -1,0 +1,63 @@
+<html>
+<body>
+
+<table>
+    <tr>
+        <td>Your full name:</td>
+        <td><input id="full_name"></input></td>
+    </tr>
+    <tr>
+        <td>Your email address:</td>
+        <td><input id="email_address"></input></td>
+    </tr>
+    <tr>
+        <td>Your Institution:</td>
+        <td><input id="Institution"></input></td>
+    </tr>
+  <tr><td><button onclick="saveTextAsFile()">Submit</button></td></tr>
+</table>
+
+<script type="text/javascript">
+
+function saveTextAsFile()
+{
+    var full_name = document.getElementById("full_name").value;
+    var email_address = document.getElementById("email_address").value;
+    var Institution = document.getElementById("Institution").value;
+    var textToSave ="";
+    textToSave+=full_name+'\n'+email_address+'\n'+Institution;
+    var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
+    var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
+    //var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
+    var fs = require('fs');
+fs.writeFile("test.txt", "Hey there!", function(err) {
+    if(err) {
+        return console.log(err);
+    }
+
+    console.log("The file was saved!");
+});
+
+    /*
+    var fileNameToSaveAs =email_address+'.txt';
+    var downloadLink = document.createElement("a");
+    downloadLink.download = fileNameToSaveAs;
+    downloadLink.innerHTML = "Download File";
+    downloadLink.href = textToSaveAsURL;
+    downloadLink.onclick = destroyClickedElement;
+    downloadLink.style.display = "none";
+    document.body.appendChild(downloadLink);
+
+    downloadLink.click();
+    */
+}
+
+function destroyClickedElement(event)
+{
+    document.body.removeChild(event.target);
+}
+
+</script>
+
+</body>
+</html>
