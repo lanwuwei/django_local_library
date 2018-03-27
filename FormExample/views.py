@@ -23,7 +23,7 @@ def index(request):
         }
 
         email = EmailMessage('Someone is downloading your dataset', str('full name: '+context['name']+'\n'+'email address: '+context['email']+'\n'+'Institution: '+context['Institution']
-                                                                        +'\n\n Here is your paraphrase website: http://web.cse.ohio-state.edu/~lan.105/project.html'), to=['lan.105@osu.edu'])
+                                                                        +'\n\n Here is your paraphrase website: http://web.cse.ohio-state.edu/~lan.105/project.html'), to=['lan.105@osu.edu', 'weixu@cse.ohio-state.edu'])
         email.send()
         #getting our showdata template
         response = HttpResponse(
