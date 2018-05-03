@@ -121,7 +121,11 @@ USE_TZ = True
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'lwwscc@gmail.com'
+<<<<<<< HEAD
 EMAIL_HOST_PASSWORD = '412019wwL6!'
+=======
+EMAIL_HOST_PASSWORD = '******'
+>>>>>>> d8c6dffd768311517e484e30a75680bf11f54f55
 EMAIL_PORT = 587
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
